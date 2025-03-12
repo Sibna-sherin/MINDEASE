@@ -1,98 +1,78 @@
-"use client";
+import React from 'react';
+import { ArrowRight, Brain, Heart, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-
-// Step 1: Add the Specialty Data
-type Specialty = {
-  name: string;
-  description: string;
-  icon: string;
-};
-
-const specialties: Specialty[] = [
-  { name: "Psychologist", description: "For therapy and counseling", icon: "🧠" },
-  { name: "Psychiatrist", description: "For medical diagnosis and treatment", icon: "💊" },
-  { name: "Therapist", description: "General mental health support", icon: "👐" },
-  { name: "Counselor", description: "Relationship, career, and personal counseling", icon: "💬" },
-  { name: "Child Psychologist", description: "Mental health support for children", icon: "👶" },
-  { name: "Trauma Specialist", description: "Support for PTSD and trauma recovery", icon: "⚡" },
-  { name: "Addiction Specialist", description: "Help with substance abuse and addiction", icon: "🚭" },
-  { name: "CBT Therapist", description: "Specialized in cognitive therapy", icon: "🧩" },
-  { name: "Mindfulness Coach", description: "Meditation and stress relief", icon: "🧘" },
-  { name: "Life Coach", description: "Guidance on personal growth and motivation", icon: "🎯" },
-];
-
-const Home: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
-
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
-      router.push(`/search?query=${searchQuery}`);
-    }
-  };
-
+const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Hero Section */}
-      <section className="relative w-full h-[40vh] flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600">
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold">Find the Right Support</h1>
-          <p className="mt-4 text-lg md:text-xl">Search for the best mental health professionals</p>
-          <div className="mt-6 flex items-center justify-center">
-            <div className="relative">
-              <Input
-                type="text"
-                placeholder="Search for specialists..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-72 md:w-96 pr-12"
-              />
-              <Button
-                onClick={handleSearch}
-                className="absolute right-0 top-0 bottom-0 px-4 bg-blue-700 hover:bg-blue-800"
-              >
-                <Search className="w-5 h-5 text-white" />
-              </Button>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+          Your Journey to
+          <span className="bg-gradient-to-r from-green-800 via-green-600 to-green-400 text-transparent bg-clip-text"> Mental Wellness</span>
+        </h1>
+        <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+          Connect with qualified mental health professionals who can help you navigate life's challenges.
+        </p>
+        <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+  <Link
+    to="/register"
+    className="flex items-center justify-center px-3 py-3 border border-transparent text-lg font-bold uppercase tracking-wide rounded-md text-white bg-primary-600 bg-opacity-30 hover:bg-primary-700 hover:bg-opacity-60 md:py-4 md:text-xl md:px-10 transition"
+  >
+    <span className="bg-gradient-to-r from-green-800 via-green-800 to-green-600 text-transparent bg-clip-text text-2xl font-extrabold tracking-wider">
+  GET READY TO EASE YOUR MIND
+</span>
+
+<ArrowRight className="ml-3 h-10 w-10 text-white opacity-100" />
+  </Link>
+</div>
+
+      </div>
+
+      <div className="mt-24">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="pt-6">
+            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+              <div className="-mt-6">
+                <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
+                  <Brain className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Professional Support</h3>
+                <p className="mt-5 text-base text-gray-500">
+                  Connect with licensed therapists and counselors specialized in various mental health areas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-6">
+            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+              <div className="-mt-6">
+                <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
+                  <Heart className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Personalized Care</h3>
+                <p className="mt-5 text-base text-gray-500">
+                  Get matched with professionals who understand your specific needs and concerns.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-6">
+            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+              <div className="-mt-6">
+                <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Easy Booking</h3>
+                <p className="mt-5 text-base text-gray-500">
+                  Schedule appointments at your convenience with our easy-to-use booking system.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Step 2: Find by Specialty Section */}
-      <section className="py-10 bg-gray-100">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Find by Specialty
-          </h2>
-          <p className="text-center text-gray-600 mb-10">
-            Choose the right specialist for your mental health needs.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {specialties.map((specialty) => (
-              <div
-                key={specialty.name}
-                className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition"
-              >
-                <span className="text-4xl">{specialty.icon}</span>
-                <h3 className="text-lg font-semibold text-gray-800 mt-2">
-                  {specialty.name}
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  {specialty.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Sections (if any) */}
+      </div>
     </div>
   );
 };
