@@ -31,41 +31,42 @@ const Home = () => {
       <div className="mt-24">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="pt-6">
-            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+          <div className="flow-root bg-primary-600 bg-opacity-30 hover:bg-primary-700 hover:bg-opacity-60 transition rounded-lg px-6 pb-8">
+
               <div className="-mt-6">
                 <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
                   <Brain className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Professional Support</h3>
-                <p className="mt-5 text-base text-gray-500">
-                  Connect with licensed therapists and counselors specialized in various mental health areas.
+                <h3 className="mt-8 text-lg font-medium text-gray-1000 tracking-tight">Professional Support</h3>
+                <p className="mt-5 text-base text-gray-510 ">
+                  Connect with licensed Professionals specialized in various mental health areas.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="pt-6">
-            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+          <div className="flow-root bg-primary-600 bg-opacity-30 hover:bg-primary-700 hover:bg-opacity-60 transition rounded-lg px-6 pb-8">
               <div className="-mt-6">
                 <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
                   <Heart className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Personalized Care</h3>
-                <p className="mt-5 text-base text-gray-500">
-                  Get matched with professionals who understand your specific needs and concerns.
+                <h3 className="mt-8 text-lg font-medium text-gray-1000 tracking-tight">Personalized Care</h3>
+                <p className="mt-5 text-base text-gray-510">
+                  Get matched with professionals who understand your specific needs and concerns.      
                 </p>
               </div>
             </div>
           </div>
 
           <div className="pt-6">
-            <div className="flow-root bg-white rounded-lg px-6 pb-8">
+            <div className="flow-root bg-primary-600 bg-opacity-30 hover:bg-primary-700 hover:bg-opacity-60 transition rounded-lg px-6 pb-8">
               <div className="-mt-6">
                 <div className="inline-flex items-center justify-center p-3 bg-primary-500 rounded-md shadow-lg">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Easy Booking</h3>
-                <p className="mt-5 text-base text-gray-500">
+                <h3 className="mt-8 text-lg font-medium text-gray-1000 tracking-tight">Easy Booking</h3>
+                <p className="mt-5 text-base text-gray-510">
                   Schedule appointments at your convenience with our easy-to-use booking system.
                 </p>
               </div>
